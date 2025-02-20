@@ -1,0 +1,11 @@
+# Usar la imagen base de Windows Server Core con IIS
+FROM mcr.microsoft.com/windows/servercore/iis
+
+# Exponer el puerto 80 para el servidor web
+EXPOSE 80
+
+# Copiar los archivos de la página web a la carpeta wwwroot de IIS
+COPY ./index.html C:/inetpub/wwwroot/index.html
+
+# Mantener IIS en ejecución
+CMD ["powershell.exe", "Start-Service", "W3SVC", "-Verbose", "&&", "ping", "-t", "localhost"]
