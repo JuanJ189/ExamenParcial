@@ -60,5 +60,8 @@ CMD ["powershell.exe", "Start-Service", "W3SVC", "-Verbose", "&&", "ping", "-t",
 
 Ahi ingresamos el siguiente comando 
 ```bash
+docker build -t servidor_iis .
+```
 
-
+y nos sale error 
+![alt text](image-3.png)
